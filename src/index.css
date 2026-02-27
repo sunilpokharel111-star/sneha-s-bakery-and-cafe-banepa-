@@ -1,0 +1,218 @@
+/* Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Body */
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #222;
+}
+
+
+/* Root */
+
+#root {
+  width: 100%;
+}
+
+
+/* Smooth scrolling (VERY IMPORTANT) */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Sections spacing */
+
+section {
+  padding: 80px 10%;
+}
+
+
+/* Headings */
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+
+/* Paragraph spacing */
+
+p {
+  margin-bottom: 20px;
+}
+
+
+/* Buttons (Premium Look) */
+
+button {
+
+  padding: 14px 28px;
+
+  font-size: 16px;
+
+  border-radius: 6px;
+
+  border: none;
+
+  background-color: #C47A2C;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+
+/* Button Hover Effect */
+
+button:hover {
+
+  background-color: #a8641f;
+
+  transform: translateY(-2px);
+
+}
+
+
+/* Navbar Links */
+
+a {
+
+  text-decoration: none;
+
+  color: white;
+
+  font-weight: 500;
+
+}
+
+
+/* Navbar Hover */
+
+a:hover {
+
+  opacity: 0.8;
+
+}
+
+
+/* Images Professional */
+
+img {
+
+  border-radius: 8px;
+
+}
+
+
+/* Menu spacing */
+
+.menuBox {
+
+  margin-top: 20px;
+
+}
+
+
+/* Gallery spacing */
+
+.galleryImages {
+
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+
+}
+
+section {
+  padding: 80px 10%;
+  scroll-margin-top: 100px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Already added overlay from previous step */
+.hero h1 {
+  font-size: 32px; /* smaller on mobile */
+  text-align: center;
+}
+
+.hero p {
+  font-size: 16px;
+  text-align: center;
+}
+
+.hero button {
+  width: 70%;
+  margin: 15px auto 0 auto;
+  display: block;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 768px) {
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px !important;
+  }
+
+  nav div {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .menuBox {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .galleryImages {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  button {
+    width: 80%;
+    text-align: center;
+  }
+
+  section {
+    padding: 60px 5%;
+  }
+}
