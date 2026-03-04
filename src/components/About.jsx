@@ -7,8 +7,9 @@ function About() {
       <h2>About Us</h2>
 
       <p>
-        Located in Banepa, our cafe offers fresh coffee,
-        bakery items and snacks in a comfortable environment.
+        Newly opened in Banepa, Sneha’s Bakery & Café blends warmth, simplicity, and flavor into one welcoming space.
+        Inspired by the calm hills and vibrant local spirit of Kavrepalanchok,
+        we offer more than coffee — we offer moments worth slowing down for.
       </p>
 
     </section>

@@ -5,7 +5,7 @@ function Footer() {
 
 <div style={styles.footer}>
 
-<p>Cafe Name - Banepa</p>
+<p>Sneha's Bakery and Cafe - Banepa</p>
 
 <p style={styles.small}>
 Website developed by Sunil

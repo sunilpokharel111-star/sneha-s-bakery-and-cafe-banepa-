@@ -5,55 +5,70 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navStyle = {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    position: "sticky",
+    top: 0,
+    zIndex: 1000,
+    backgroundColor: scrolled ? "#2C1810" : "#3B1F1F",
+    height: scrolled ? "65px" : "90px",
+    padding: scrolled ? "0 50px" : "0 60px",
+    transition: "all 0.35s ease",
+    boxShadow: scrolled ? "0 4px 15px rgba(0,0,0,0.2)" : "none"
+  };
+
+  const logoStyle = {
+    color: "white",
+    margin: 0,
+    fontSize: scrolled ? "20px" : "28px",
+    fontWeight: "600",
+    letterSpacing: "1px",
+    transition: "all 0.35s ease"
+  };
+
+  const linksContainer = {
+    display: "flex",
+    gap: "30px"
+  };
+
+  const linkStyle = {
+    color: "white",
+    textDecoration: "none",
+    fontSize: "16px",
+    fontWeight: "500",
+    letterSpacing: "1px",
+    position: "relative",
+    transition: "0.3s ease"
+  };
+
   return (
-    <nav style={{ 
-        ...styles.nav, 
-        height: scrolled ? "60px" : "90px", 
-        padding: scrolled ? "10px 40px" : "20px 40px",
-        transition: "all 0.3s ease"
-    }}>
-      <h2 style={{ ...styles.logo, fontSize: scrolled ? "20px" : "28px" }}>Cafe Name</h2>
-      <div style={styles.links}>
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#location">Location</a>
-        <a href="#contact">Contact</a>
+    <nav style={navStyle}>
+      <h2 style={logoStyle}>Sneha’s Bakery & Cafe</h2>
+
+      <div style={linksContainer}>
+        {["About", "Menu", "Location", "Contact"].map((item) => (
+          <a
+            key={item}
+            href={`#${item.toLowerCase()}`}
+            style={linkStyle}
+            onMouseEnter={(e) => (e.target.style.opacity = "0.7")}
+            onMouseLeave={(e) => (e.target.style.opacity = "1")}
+          >
+            {item}
+          </a>
+        ))}
       </div>
     </nav>
   );
 }
-
-const styles = {
-  nav: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    backgroundColor: "#4A2C2A",
-    color: "white",
-    position: "sticky",
-    top: 0,
-    zIndex: 1000
-  },
-  logo: {
-    margin: 0,
-    transition: "all 0.3s ease"
-  },
-  links: {
-    display: "flex",
-    gap: "20px"
-  }
-};
 
 export default Navbar;

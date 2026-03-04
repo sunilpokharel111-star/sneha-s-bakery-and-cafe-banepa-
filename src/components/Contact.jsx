@@ -7,11 +7,11 @@ function Contact() {
 
 <h2>Contact</h2>
 
-<p>Phone: 98XXXXXXXX</p>
+<p>Phone: 9700894919</p>
 
 <p>Open Daily</p>
 
-<p>7 AM - 8 PM</p>
+<p>6 AM - 10 PM</p>
 
 </section>
 
