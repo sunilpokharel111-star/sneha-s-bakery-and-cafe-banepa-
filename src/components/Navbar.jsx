@@ -36,8 +36,8 @@ function Navbar() {
 
   const linksContainer = {
     display: "flex",
-    gap: "20px",
-    flexWrap: "wrap" // allows wrapping on small screens
+    gap: "10px",
+    flexWrap: "nowrap" // allows wrapping on small screens
   };
 
   const linkStyle = {
