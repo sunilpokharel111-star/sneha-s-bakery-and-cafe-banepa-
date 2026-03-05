@@ -7,7 +7,6 @@ function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -21,9 +20,9 @@ function Navbar() {
     zIndex: 1000,
     backgroundColor: scrolled ? "#2C1810" : "#3B1F1F",
     height: scrolled ? "65px" : "90px",
-    padding: scrolled ? "0 50px" : "0 60px",
+    padding: scrolled ? "0 30px" : "0 50px",
     transition: "all 0.35s ease",
-    boxShadow: scrolled ? "0 4px 15px rgba(0,0,0,0.2)" : "none"
+    flexWrap: "wrap"
   };
 
   const logoStyle = {
@@ -37,7 +36,8 @@ function Navbar() {
 
   const linksContainer = {
     display: "flex",
-    gap: "30px"
+    gap: "20px",
+    flexWrap: "wrap" // allows wrapping on small screens
   };
 
   const linkStyle = {
@@ -54,6 +54,7 @@ function Navbar() {
     <nav style={navStyle}>
       <h2 style={logoStyle}>Sneha’s Bakery & Cafe</h2>
 
+      {/* Desktop & Mobile Links (always visible) */}
       <div style={linksContainer}>
         {["About", "Menu", "Location", "Contact"].map((item) => (
           <a

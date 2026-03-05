@@ -1,13 +1,11 @@
-/* Reset */
-
+/* =====================
+   Reset and Box Sizing
+===================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-
-/* Body */
 
 body {
   width: 100%;
@@ -16,34 +14,25 @@ body {
   line-height: 1.6;
   background-color: #ffffff;
   color: #222;
-  margin: o;
-  padding: 0;
 }
 
-
 /* Root */
-
 #root {
   width: 100%;
 }
 
-
-/* Smooth scrolling (VERY IMPORTANT) */
-
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-
 /* Sections spacing */
-
 section {
   padding: 80px 10%;
+  scroll-margin-top: 100px;
 }
 
-
 /* Headings */
-
 h1 {
   font-size: 48px;
   margin-bottom: 10px;
@@ -58,110 +47,61 @@ h3 {
   margin-bottom: 10px;
 }
 
-
-/* Paragraph spacing */
-
+/* Paragraphs */
 p {
   margin-bottom: 20px;
 }
 
-
-/* Buttons (Premium Look) */
-
+/* Buttons */
 button {
-
   padding: 14px 28px;
-
   font-size: 16px;
-
   border-radius: 6px;
-
   border: none;
-
   background-color: #C47A2C;
-
   color: white;
-
   cursor: pointer;
-
   transition: 0.3s;
-
 }
-
-
-/* Button Hover Effect */
 
 button:hover {
-
   background-color: #a8641f;
-
   transform: translateY(-2px);
-
 }
 
+/* =====================
+   Navbar
+===================== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 10%;
+  background-color: #222;
+}
 
-/* Navbar Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
 
-a {
-
+.nav-links a {
   text-decoration: none;
-
   color: white;
-
   font-weight: 500;
-
+  margin-right: 0;
 }
 
-
-/* Navbar Hover */
-
-a:hover {
-
+.nav-links a:hover {
   opacity: 0.8;
-
 }
 
-
-/* Images Professional */
-
-img {
-
-  border-radius: 8px;
-
-}
-
-
-/* Menu spacing */
-
-.menuBox {
-
-  margin-top: 20px;
-
-}
-
-
-/* Gallery spacing */
-
-.galleryImages {
-
-  margin-top: 30px;
-  width: 100%;
-  height: auto;
-
-}
-
-section {
-  padding: 80px 10%;
-  scroll-margin-top: 100px;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* Already added overlay from previous step */
+/* =====================
+   Hero Section
+===================== */
 .hero h1 {
-  font-size: 32px; /* smaller on mobile */
+  font-size: 32px;
   text-align: center;
 }
 
@@ -176,31 +116,113 @@ html {
   display: block;
 }
 
-/* Mobile responsiveness */
+/* =====================
+   Menu Section
+===================== */
+.menuBox {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* =====================
+   Gallery Section
+===================== */
+.galleryImages {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* horizontal scroll */
+  overflow-x: auto;
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+.galleryImages img {
+  flex: 0 0 100%; /* 1 image at a time on mobile */
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* =====================
+   Map Section
+===================== */
+.map-section {
+  padding: 0 5%; /* prevent map touching edges */
+}
+
+.map-section iframe {
+  width: 100%;
+  max-width: 100%;
+  height: 300px; /* smaller for mobile */
+  border: none;
+  border-radius: 8px;
+  display: block;
+  margin: 20px auto;
+}
+
+/* =====================
+   Mobile Responsiveness
+===================== */
+@media (max-width: 1024px) {
+  section {
+    padding: 60px 5%;
+  }
+}
 
 @media (max-width: 768px) {
 
+  /* Navbar vertical on mobile */
   nav {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 20px !important;
+    align-items: center;
+    padding: 10px 5%;
   }
 
-  nav div {
-    gap: 10px;
-    flex-wrap: wrap;
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
   }
 
+  .nav-links a {
+    width: 100%;
+    margin: 8px 0;
+    text-align: center;
+  }
+
+  /* Hero */
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero button {
+    width: 90%;
+  }
+
+  /* Menu Boxes stack vertically */
   .menuBox {
     flex-direction: column;
     gap: 20px;
   }
 
+  /* Gallery images scroll 1 by 1 */
   .galleryImages {
-    flex-direction: column;
+    flex-direction: row;
+    overflow-x: auto;
     gap: 15px;
   }
 
+  .galleryImages img {
+    flex: 0 0 100%;
+  }
+
+  /* Headings */
   h1 {
     font-size: 32px;
   }
@@ -209,12 +231,13 @@ html {
     font-size: 24px;
   }
 
+  /* Buttons full width */
   button {
-    width: 80%;
-    text-align: center;
+    width: 100%;
   }
 
-  section {
-    padding: 60px 5%;
+  /* Map adjustments */
+  .map-section iframe {
+    height: 250px; /* smaller on very small screens */
   }
 }

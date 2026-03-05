@@ -9,9 +9,9 @@ function Gallery() {
       <h2 style={styles.title}>Gallery</h2>
 
       <div style={styles.images}>
-        <img src={img1} alt="Gallery 1" style={styles.img}/>
-        <img src={img2} alt="Gallery 2" style={styles.img}/>
-        <img src={img3} alt="Gallery 3" style={styles.img}/>
+        <img src={img1} alt="Gallery 1" style={styles.img} />
+        <img src={img2} alt="Gallery 2" style={styles.img} />
+        <img src={img3} alt="Gallery 3" style={styles.img} />
       </div>
     </div>
   );
@@ -19,7 +19,7 @@ function Gallery() {
 
 const styles = {
   container: {
-    padding: "60px",
+    padding: "60px 20px",
     textAlign: "center",
     backgroundColor: "#F8F6F3"
   },
@@ -32,16 +32,20 @@ const styles = {
 
   images: {
     display: "flex",
-    justifyContent: "center",
-    gap: "20px"
+    gap: "20px",
+    overflowX: "auto",       // enable horizontal scroll
+    scrollSnapType: "x mandatory", // snap 1 image at a time
+    paddingBottom: "10px"
   },
 
   img: {
+    flex: "0 0 auto",      // prevent shrinking
     width: "300px",
     height: "350px",
     objectFit: "cover",
     borderRadius: "12px",
-    boxShadow: "0 8px 20px rgba(0,0,0,0.1)"
+    boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
+    scrollSnapAlign: "start",
   }
 };
 
